@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+</head>
+<body>
+<h1>Dashboard</h1>
+
+<h2>Tarefas</h2>
+<ul>
+  <!-- Lista todas as tarefas -->
+  <th:block th:each="task : ${dashboard.tasks}">
+    <li th:text="${task.title}"></li>
+  </th:block>
+</ul>
+
+<h2>Usuários</h2>
+<ul>
+  <!-- Lista todos os usuários -->
+  <th:block th:each="user : ${dashboard.users}">
+    <li th:text="${user.name}"></li>
+  </th:block>
+</ul>
+
+<h2>Categorias</h2>
+<ul>
+  <!-- Lista todas as categorias -->
+  <th:block th:each="category : ${dashboard.categories}">
+    <li th:text="${category.name}"></li>
+  </th:block>
+</ul>
+
+<h2>Criar Tarefa</h2>
+<!-- Adicione um formulário para criar uma nova tarefa -->
+<form id="taskForm" action="/dashboard/createTask" method="post">
+  <label for="title">Título:</label>
+  <input type="text" id="title" name="title" required><br>
+
+  <label for="description">Descrição:</label>
+  <textarea id="description" name="description" required></textarea><br>
+
+  <label for="dueDate">Data de Vencimento:</label>
+  <input type="date" id="dueDate" name="dueDate" required><br>
+
+  <label for="priority">Prioridade:</label>
+  <select id="priority" name="priority" required>
+    <option value="1">Alta</option>
+    <option value="2">Média</option>
+    <option value="3">Baixa</option>
+  </select><br>
+
+  <label for="categoryId">Categoria:</label>
+  <select id="categoryId" name="categoryId" required>
+    <!-- Adicione um option para "Sem Categoria" com valor -1 -->
+    <option value="-1">Sem Categoria</option>
+    <!-- Popule este dropdown com categorias dinamicamente -->
+    <th:block th:each="category : ${dashboard.categories}">
+      <option th:value="${category.id}" th:text="${category.name}"></option>
+    </th:block>
+  </select>
+  <!-- Campo de input para criar uma nova categoria -->
+  <label for="newCategory">Criar Nova Categoria:</label>
+  <input type="text" id="newCategory" name="newCategory">
+  <button type="button" id="createCategory">Criar</button>
+
+  <!-- Botão de envio do formulário -->
+  <button type="submit">Criar Tarefa</button>
+</form>
+</body>
+</html>

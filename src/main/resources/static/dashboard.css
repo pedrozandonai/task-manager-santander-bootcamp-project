@@ -1,0 +1,82 @@
+/* Reset some default styles */
+body, h1, h2, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('modules/images/HRSC-23232.png'); /* Substitua com o URL da sua imagem de fundo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: opacity(0.5); /* Ajuste a opacidade conforme necessário */
+    z-index: -1;
+}
+
+.dashboard-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo com opacidade */
+    padding: 20px;
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    background-color: #333;
+    color: #fff;
+    list-style-type: none;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com opacidade */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Details</title>
+</head>
+<body>
+<h1>Task Details</h1>
+<p><strong>Title:</strong> <span th:text="${task.title}"></span></p>
+<p><strong>Description:</strong> <span th:text="${task.description}"></span></p>
+<p><strong>Due Date:</strong> <span th:text="${#dates.format(task.dueDate, 'yyyy-MM-dd')}"></span></p>
+<p><strong>Priority:</strong> <span th:text="${task.priority}"></span></p>
+<p><strong>Category:</strong> <span th:text="${task.category}"></span></p>
+<p><strong>User:</strong> <span th:text="${task.user}"></span></p>
+<p><strong>Finalizada:</strong> <span th:text="${task.isCompleted()}"></span></p>
+
+</body>
+</html>
